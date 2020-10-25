@@ -20,48 +20,56 @@
  */
 void BenchmarkFunction(int array[], int arraySize, int choosedMethod)
 {
-	float 
-		startTimer, 
-		endTimer, 
-		elapsedTime
-	;
+
+	__int64 computerFrequency, startTimer, endTimer;
+
+	double elapsedTime;
 
 	switch(choosedMethod)
 	{
 		case 1:
 		{
-			startTimer = (float)clock() / CLOCKS_PER_SEC;
-			BubbleSort(array, arraySize);
-			endTimer = (float)clock() / CLOCKS_PER_SEC;
+			QueryPerformanceFrequency((LARGE_INTEGER *)&computerFrequency);
+			QueryPerformanceCounter((LARGE_INTEGER *)&startTimer);
 
-			elapsedTime = endTimer - startTimer;
+			BubbleSort(array, arraySize);
+
+			QueryPerformanceCounter((LARGE_INTEGER *)&endTimer);
+
+			elapsedTime = ((double)endTimer-(double)startTimer) / (double)computerFrequency;
 
 			SaveSortedFile(array, 1, arraySize);
-			BenchmarkLog("BubbleSort", elapsedTime);
+			BenchmarkLog("BubbleSort", elapsedTime, arraySize);
 			break;
 		}
 		case 2:
 		{
-			startTimer = (float)clock() / CLOCKS_PER_SEC;
-			QuickSort(array, 0, arraySize - 1);
-			endTimer = (float)clock() / CLOCKS_PER_SEC;
+			QueryPerformanceFrequency((LARGE_INTEGER *)&computerFrequency);
+			QueryPerformanceCounter((LARGE_INTEGER *)&startTimer);
 
-			elapsedTime = endTimer - startTimer;
+			QuickSort(array, 0, arraySize - 1);
+
+			QueryPerformanceCounter((LARGE_INTEGER *)&endTimer);
+
+			elapsedTime = ((double)endTimer-(double)startTimer) / (double)computerFrequency;
 
 			SaveSortedFile(array, 2, arraySize);
-			BenchmarkLog("QuickSort", elapsedTime);
+			BenchmarkLog("QuickSort", elapsedTime, arraySize);
 			break;
 		}
 		case 3:
 		{
-			startTimer = (float)clock() / CLOCKS_PER_SEC;
-			InsertionSort(array, arraySize);
-			endTimer = (float)clock() / CLOCKS_PER_SEC;
+			QueryPerformanceFrequency((LARGE_INTEGER *)&computerFrequency);
+			QueryPerformanceCounter((LARGE_INTEGER *)&startTimer);
 
-			elapsedTime = endTimer - startTimer;
+			InsertionSort(array, arraySize);
+
+			QueryPerformanceCounter((LARGE_INTEGER *)&endTimer);
+
+			elapsedTime = ((double)endTimer-(double)startTimer) / (double)computerFrequency;
 
 			SaveSortedFile(array, 3, arraySize);
-			BenchmarkLog("InsertionSort", elapsedTime);
+			BenchmarkLog("InsertionSort", elapsedTime, arraySize);
 			break;
 		}
 	}

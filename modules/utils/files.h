@@ -28,7 +28,7 @@ void CloseFile(FILE *archive)
  * @param content             valor do teste de performance.
  * @return                    não retorna valores.
  */
-void BenchmarkLog(char usedFunction[], float content)
+void BenchmarkLog(char usedFunction[], double content, int arraySize)
 {
 	FILE *archive;
 	struct tm *locTime;
@@ -41,8 +41,10 @@ void BenchmarkLog(char usedFunction[], float content)
 
 	archive = fopen(benchmarkDirectory, "a");
 
-	fprintf(archive, "[%d/%d/%d ~ %dhr%dmin%dseg]\n", locTime->tm_mday, locTime->tm_mon + 1, locTime->tm_year + 1900, locTime->tm_hour, locTime->tm_min, locTime->tm_sec);
-	fprintf(archive, "%s: %f\n\n", usedFunction, content);
+	fprintf(archive, "* %d/%d/%d ~ %dhr%dmin%dseg\n", locTime->tm_mday, locTime->tm_mon + 1, locTime->tm_year + 1900, locTime->tm_hour, locTime->tm_min, locTime->tm_sec);
+	fprintf(archive, "* usedFunction: %s\n", usedFunction);
+	fprintf(archive, "* arraySize: %d\n", arraySize);
+	fprintf(archive, "* timeElapsed: %f\n\n", content);
 
 	CloseFile(archive);
 }

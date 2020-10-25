@@ -34,7 +34,7 @@ int SplitArray(int array[], int lowerNumber,int higherNumber);
 
 /* Files */
 void CloseFile(FILE *archive);
-void BenchmarkLog(char usedFunction[], float content);
+void BenchmarkLog(char usedFunction[], double content, int arraySize);
 void SaveSortedFile(int array[], int arrayType, int arraySize);
 
 /*

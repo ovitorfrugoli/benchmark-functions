@@ -42,7 +42,7 @@ int main(int argc, char const *argv[])
 	ShowInfo();
 	ShowMenu();
 
-	exit(1);
+	system("Pause");
 	return 0;
 }
 
