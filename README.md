@@ -2,7 +2,7 @@
 
 Foi nos proposto a criação de um sistema na linguagem de programação C para o teste de performance de três funções de ordenação de matriz, sendo elas BubbleSort, QuickSort e InsertionSort.
 
-##Observações
+## Observações
 Segue abaixo algumas observações a serem levadas em conta:
 
 * Não altere o nome dos arquivos (archives/original) sem antes alterar no módulo 'variables'.
