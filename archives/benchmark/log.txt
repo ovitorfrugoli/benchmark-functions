@@ -1,0 +1,9 @@
+[25/10/2020 ~ 17hr9min18seg]
+BubbleSort: 0.001000
+
+[25/10/2020 ~ 17hr9min20seg]
+QuickSort: 0.000000
+
+[25/10/2020 ~ 17hr9min22seg]
+InsertionSort: 0.000000
+
