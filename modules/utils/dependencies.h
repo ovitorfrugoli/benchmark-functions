@@ -1,5 +1,5 @@
 /*******************************************************************************
-* FILENAME :        modules/utils.h
+* FILENAME :        modules/utils/dependencies.h
 *
 * DESCRIPTION :
 *       Util functions to the project.
@@ -11,7 +11,7 @@
 */
 
 /**
- * Altera os números dentro de uma determinada Matriz.
+ * Altera a posição de determinados números dentro de uma determinada Matriz.
  * 
  * @param firstNumber    primeiro número retirado da matriz.
  * @param secondNumber   segundo número retirado da matriz
@@ -27,12 +27,12 @@ void ChangePosition(int *firstNumber, int *secondNumber)
 }
 
 /**
- * 
+ * Organiza a matriz utilizando o último número da matriz como ponto central da mesma.
  * 
  * @param array          matriz a ser ordenada.
  * @param lowerNumber    menor número dentro da matriz não ordenada.
  * @param higherNumber   maior número dentro da matriz não ordenada
- * @return               .
+ * @return               retorna index + 1.
  */
 int SplitArray(int array[], int lowerNumber,int higherNumber)
 {
@@ -55,31 +55,11 @@ int SplitArray(int array[], int lowerNumber,int higherNumber)
 }
 
 /**
+ * Lê um determinado arquivo e insere os números dentro de uma determinada matriz.
  * 
- * 
- * @param array          matriz a ser ordenada.
- * @param lowerNumber    menor número dentro da matriz não ordenada.
- * @param higherNumber   maior número dentro da matriz não ordenada.
- * @return               .
+ * @param arrayType     estilo da matriz selecionada.
+ * @return              não retorna valores.
  */
-void ReadArray(int array[], int arraySize)
-{
-	for(int i = 0; i < arraySize; i++)
-		printf("%d\n", array[i]);
-}
-
-/**
- * Fecha o arquivo escolhido.
- * 
- * @param archive        arquivo escolhido.
- * @return               não retorna valores.
- * @author               Vitor Santos.
- */
-void CloseFile(FILE *archive)
-{
-	fclose(archive);
-}
-
 void CreateArray(int arrayType)
 {
 	switch(arrayType)
@@ -143,48 +123,3 @@ void CreateArray(int arrayType)
 	}
 }
 
-void BenchmarkFunction(int array[], int arraySize, int choosedMethod)
-{
-	float 
-		startTimer, 
-		endTimer, 
-		elapsedTime
-	;
-
-	switch(choosedMethod)
-	{
-		case 1:
-		{
-			startTimer = (float)clock() / CLOCKS_PER_SEC;
-			BubbleSort(array, arraySize);
-			endTimer = (float)clock() / CLOCKS_PER_SEC;
-
-			elapsedTime = endTimer - startTimer;
-
-			printf("[DEBUG] %f\n", elapsedTime);
-			break;
-		}
-		case 2:
-		{
-			startTimer = (float)clock() / CLOCKS_PER_SEC;
-			QuickSort(array, 0, arraySize - 1);
-			endTimer = (float)clock() / CLOCKS_PER_SEC;
-
-			elapsedTime = endTimer - startTimer;
-
-			printf("[DEBUG] %f\n", elapsedTime);
-			break;
-		}
-		case 3:
-		{
-			startTimer = (float)clock() / CLOCKS_PER_SEC;
-			InsertionSort(array, arraySize);
-			endTimer = (float)clock() / CLOCKS_PER_SEC;
-
-			elapsedTime = endTimer - startTimer;
-
-			printf("[DEBUG] %f\n", elapsedTime);
-			break;
-		}
-	}
-}

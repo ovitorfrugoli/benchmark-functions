@@ -1,5 +1,5 @@
 /*******************************************************************************
-* FILENAME :        modules/visual.h
+* FILENAME :        modules/visual/menu.h
 *
 * DESCRIPTION :
 *       Module that contain all of the visual functions.
@@ -11,10 +11,9 @@
 */
 
 /**
- * 
+ * Exibe o banner de ínicio do programa.
  * 
  * @return            não retorna valores.
- * @author            Vitor Santos.
  */
 void ShowBanner()
 {
@@ -26,10 +25,9 @@ void ShowBanner()
 }
 
 /**
- * 
+ * Exibe informações essenciais do programa.
  * 
  * @return            não retorna valores.
- * @author            Vitor Santos.
  */
 void ShowInfo()
 {
@@ -40,10 +38,9 @@ void ShowInfo()
 }
 
 /**
+ * Exibe o menu de opções para o usuário.
  * 
- * 
- * @return            não retorna valores.
- * @author            Vitor Santos.
+ * @return            retorna a opção selecionada pelo usuário.
  */
 bool ShowMenu()
 {
@@ -80,11 +77,10 @@ bool ShowMenu()
 }
 
 /**
- * 
+ * Faz o processo de funcionamento do menu principal.
  * 
  * @param optionChoosed  Opção escolhida pelo usuário.
  * @return               retorna verdadeiro caso seja uma escolha válida.
- * @author               Vitor Santos
  */
 bool MenuFunctions(char optionChoosed)
 {
@@ -95,7 +91,6 @@ bool MenuFunctions(char optionChoosed)
 			case '1':
 			{
 				choosedArray = 1;
-				//CreateArray('1');
 				pageMenu = 2;
 				ShowMenu();
 				break;
@@ -103,7 +98,6 @@ bool MenuFunctions(char optionChoosed)
 	
 			case '2':
 			{
-				//CreateArray('2');
 				choosedArray = 2;
 				pageMenu = 2;
 				ShowMenu();
@@ -113,7 +107,6 @@ bool MenuFunctions(char optionChoosed)
 	
 			case '3':
 			{
-				//CreateArray('3');
 				choosedArray = 3;
 				pageMenu = 2;
 				ShowMenu();
@@ -124,7 +117,6 @@ bool MenuFunctions(char optionChoosed)
 			default:
 			{
 				printf("Opcao invalida, arquivo padrao escolhido.\n");
-				//CreateArray('4');
 				choosedArray = 4;
 				pageMenu = 2;
 				ShowMenu();

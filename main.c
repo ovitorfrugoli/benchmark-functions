@@ -13,17 +13,28 @@
 /*
 *  Modules
  */
-#include "modules/includes.h"
-#include "modules/defines.h"
-#include "modules/variables.h"
-#include "modules/functions.h"
-#include "modules/visual.h"
-#include "modules/utils.h"
-#include "modules/sort.h"
+
+/* Core */
+#include "modules/core/includes.h"
+#include "modules/core/header.h"
+
+/* Data */
+#include "modules/data/defines.h"
+#include "modules/data/variables.h"
+
+/* System */
+#include "modules/system/benchmark.h"
+#include "modules/system/sort.h"
+
+/* Utils */
+#include "modules/utils/dependencies.h"
+#include "modules/utils/files.h"
+
+/* Visual */
+#include "modules/visual/menu.h"
 
 /*
 *  Main Callback
-
  */
 int main(int argc, char const *argv[])
 {
@@ -31,7 +42,7 @@ int main(int argc, char const *argv[])
 	ShowInfo();
 	ShowMenu();
 
-	system("Pause");
+	exit(1);
 	return 0;
 }
 

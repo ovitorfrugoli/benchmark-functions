@@ -1,5 +1,5 @@
 /*******************************************************************************
-* FILENAME :        modules/sort.h
+* FILENAME :        modules/system/sort.h
 *
 * DESCRIPTION :
 *       Module that contains the sorting logic.
@@ -11,10 +11,11 @@
 */
 
 /**
- * Organiza a matriz em ordem crescente.
+ * Algorítmo de "ordenação bolha"
  * 
- * @return            não retorna valores.
- * @author            Vitor Santos.
+ * @param array           matriz selecionada.
+ * @param arraySize       tamanho da matriz selecionada.
+ * @return                não retorna valores.
  */
 void BubbleSort(int array[], int arraySize)
 {
@@ -31,10 +32,12 @@ void BubbleSort(int array[], int arraySize)
 }
 
 /**
- * Organiza a matriz em ordem crescente.
+ * Algorítmo de "ordenação rápida."
  * 
- * @return            não retorna valores.
- * @author            Vitor Santos.
+ * @param array           matriz selecionada.
+ * @param lowerNumber     menor número dentro da matriz.
+ * @param higherNumber    maior número dentro da matriz.
+ * @return                não retorna valores.
  */
 void QuickSort(int array[], int lowerNumber, int higherNumber)
 {
@@ -48,10 +51,11 @@ void QuickSort(int array[], int lowerNumber, int higherNumber)
 }
 
 /**
- * Organiza a matriz em ordem crescente.
+ * Algorítmo de ordenação por inserção.
  * 
- * @return            não retorna valores.
- * @author            Vitor Santos.
+ * @param array           matriz selecionada.
+ * @param arraySize       tamanho da matriz selecionada.
+ * @return                não retorna valores.
  */
 void InsertionSort(int array[], int arraySize)
 {

@@ -1,5 +1,5 @@
 /*******************************************************************************
-* FILENAME :        modules/includes.h
+* FILENAME :        modules/core/includes.h
 *
 * DESCRIPTION :
 *       Module that contains the core libraries.
