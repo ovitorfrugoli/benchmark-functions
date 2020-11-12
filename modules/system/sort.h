@@ -57,23 +57,14 @@ void QuickSort(int array[], int lowerNumber, int higherNumber)
  * @param arraySize       tamanho da matriz selecionada.
  * @return                não retorna valores.
  */
-void InsertionSort(int array[], int arraySize)
-{
-	for(int i = 1; i < arraySize; i++)
-	{
-		int 
-			j,
-			sortingKey = array[i]
-		;
+void InsertionSort(int array[], int arraySize){
+    int sortingKey, j;
 
-		j = i - 1;
+    for(int i = 1; i < arraySize; i++){
+        sortingKey = array[i];
 
-		while(j >= 0 && array[j] > sortingKey)
-		{
-			array[j + i] = array[j];
-			j = j - 1;
-		}
-		array[j + 1] = sortingKey;
-	}
+        for(j = i; j > 0 && sortingKey < array[j - 1]; j--)
+            array[j] = array[j - 1];
+        array[j] = sortingKey;
+    }
 }
-

@@ -45,4 +45,3 @@ int main(int argc, char const *argv[])
 	system("Pause");
 	return 0;
 }
-
