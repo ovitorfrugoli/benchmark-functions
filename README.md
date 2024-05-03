@@ -12,12 +12,3 @@ Segue abaixo algumas observações a serem levadas em conta:
 
 Este é um trabalho de Atividades Práticas Supervisionadas (APS) da Universidade Paulista - UNIP. Campus de São José dos Campus - Dutra.
 Turma de Engenharia da Computação.
-
-## Participantes do projeto.
-
-* Vitor Frugoli dos Santos - N260GH0
-* Gustavo Britto Cezario - N236BD3
-* Michel Ferreira Galdino - N276CC4
-* Rebeca dos Santos Costa - D69CJJ7
-* José Vitor Galdino de Matos - T8962D5
-
